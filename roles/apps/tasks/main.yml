@@ -51,6 +51,12 @@
       - gnome-usage
   become: true
 
+- name: Install CLI apps
+  dnf:
+    name:
+      - zstd
+  become: true
+
 - name: Add the user to the required groups
   user:
     append: true
