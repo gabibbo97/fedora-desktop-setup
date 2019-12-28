@@ -5,3 +5,5 @@
     value: "{{ item['value'] }}"
     scope: global
   with_dict: "{{ git_config }}"
+  loop_control:
+    label: "{{ item['key'] }}"
