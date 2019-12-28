@@ -17,6 +17,7 @@
     - rpmfusion
     - locale
     # Applications
+    - apps
     - coding
     - containerization
     - k8s

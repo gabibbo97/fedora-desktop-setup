@@ -1,0 +1,60 @@
+---
+- name: Install apps
+  dnf:
+    name:
+      # Audio & Video
+      - obs-studio # Recording
+      - olive # Video editor
+      - pulseeffects # Audio effects
+      - vlc # Media player
+      # Communication
+      - chromium-vaapi # Web browser
+      - firefox # Web browser
+      - telegram-desktop
+      - transmission # Torrent client
+      # Gaming
+      - openttd
+      - powdertoy
+      - steam
+      # Graphics
+      - darktable # RAW images
+      - gimp # Normal images
+      - hugin # Panoramas
+      - inkscape # Vector images
+      # Science
+      - octave
+      - octave-image
+      - octave-optim
+      - octave-symbolic
+      # Tools
+      - wireshark
+      - youtube-dl
+  become: true
+
+- name: Install GNOME apps
+  dnf:
+    name:
+      - gnome-boxes
+      - gnome-calculator
+      - gnome-calendar
+      - gnome-firmware
+      - gnome-games
+      - gnome-latex
+      - gnome-network-displays
+      - gnome-passwordsafe
+      - gnome-power-manager
+      - gnome-remote-desktop
+      - gnome-software
+      - gnome-system-log
+      - gnome-system-monitor
+      - gnome-terminal
+      - gnome-usage
+  become: true
+
+- name: Add the user to the required groups
+  user:
+    append: true
+    name: "{{ ansible_user }}"
+    groups: "{{ item }}"
+  loop: ['wireshark']
+  become: true
