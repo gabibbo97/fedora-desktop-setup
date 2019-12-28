@@ -1,0 +1,14 @@
+---
+git_config:
+  # Compression
+  core.compression: 9
+  # Parallel
+  fetch.parallel: 0
+  grep.threads: "{{ ansible_processor_vcpus }}"
+  http.maxRequests: "{{ ansible_processor_vcpus }}"
+  index.threads: 0
+  pack.threads: 0
+  submodule.fetchJobs: 0
+  # User
+  user.name: Giacomo Longo
+  user.email: gabibbo97@gmail.com
