@@ -1,0 +1,17 @@
+---
+- name: Enable Eclipse module
+  command: dnf module enable -y eclipse:latest
+  changed_when: false
+  become: true
+
+- name: Install compilers, IDEs and tools for development
+  dnf:
+    name:
+      # Compilers
+      # IDEs
+      ## Eclipse
+      - eclipse-egit # Eclipse git integration
+      - eclipse-jdt # Eclipse Java tools
+      - eclipse-webtools-javaee # Java EE tools
+      # Tool
+  become: true
