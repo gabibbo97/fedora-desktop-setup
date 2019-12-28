@@ -23,4 +23,9 @@ vscode_configuration:
     workbench.iconTheme: vscode-icons
     workbench.tree.renderIndentGuides: always
 vscode_extensions:
+- bbenoist.vagrant
+- ms-kubernetes-tools.vscode-kubernetes-tools
+- redhat.vscode-yaml
 - vscode-icons-team.vscode-icons
+- vscoss.vscode-ansible
+- yzhang.markdown-all-in-one
