@@ -3,7 +3,7 @@ name: Ansible Lint main playbook
 on:
   push:
     paths:
-      - roles/*
+      - roles/**
       - playbook.yml
 
 jobs:
