@@ -23,5 +23,6 @@
     - git
     - gnome
     - k8s
+    - vagrant
     - vscode
     - zsh
