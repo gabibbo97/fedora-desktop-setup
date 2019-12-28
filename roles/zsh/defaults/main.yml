@@ -1,8 +1,10 @@
 ---
 zsh_aliases:
   cp: 'cp --reflink=auto'
-  docker: 'podman'
   docker-compose: 'podman-compose'
+  docker: 'podman'
+  gzip: "pigz"
+  sort: "sort --parallel={{ ansible_processor_vcpus }}"
 
 zsh_plugins:
   zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
