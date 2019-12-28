@@ -28,9 +28,22 @@
   when: minikube_install is changed
 
 # Helm
-- name: Install Helm v3.0.2
+- name: Check Helm version
+  command: helm version --short
+  changed_when: false
+  failed_when: false
+  register: helm_installed_version
+
+- name: Delete old Helm binary
+  file:
+    path: /usr/local/bin/helm
+    state: absent
+  become: true
+  when: (helm_installed_version['rc'] == 0) and (helm_installed_version['stdout'] is version(helm_version ,'<'))
+
+- name: "Install Helm {{ helm_version }}"
   unarchive:
-    src: https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz
+    src: "https://get.helm.sh/helm-{{ helm_version }}-linux-amd64.tar.gz"
     creates: /usr/local/bin/helm
     dest: /usr/local/bin
     mode: 0755
