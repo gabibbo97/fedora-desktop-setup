@@ -1,0 +1,64 @@
+---
+- name: Install ZSH
+  dnf:
+    name: zsh
+  become: true
+
+# Oh-my-ZSH
+- name: Create ~/.oh-my-zsh
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh"
+    state: directory
+- name: Clone oh-my-zsh repository
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh"
+
+- name: Create oh-my-zsh customization directory
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh/custom/lib"
+    state: directory
+- name: Create oh-my-zsh plugins directory
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins"
+    state: directory
+
+# Plugins
+- name: Create oh-my-zsh plugins clone directory
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/{{ item['key'] }}"
+    state: directory
+  with_dict:
+    zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
+    zsh-completions: https://github.com/zsh-users/zsh-completions
+    zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
+  with_dict: "{{ zsh_plugins }}"
+- name: Install oh-my-zsh plugins
+  git:
+    repo: "{{ item['value'] }}"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/{{ item['key'] }}"
+  with_dict: "{{ zsh_plugins }}"
+  loop_control:
+    label: "{{ item['key'] }}"
+
+# Customizations
+- name: Copy oh-my-zsh customizations
+  template:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/lib/{{ item | basename }}"
+  with_fileglob: "{{ role_path }}/templates/oh-my-zsh-custom/*.zsh"
+  loop_control:
+    label: "{{ item | basename }}"
+
+# Zshrc
+- name: Template zshrc
+  template:
+    src: zshrc.zsh
+    dest: "{{ ansible_user_dir }}/.zshrc"
+
+# Set user shell
+- name: "Set user shell to zsh"
+  user:
+    name: "{{ ansible_user }}"
+    shell: "{{ lookup('pipe', 'which zsh') }}"
+  become: true

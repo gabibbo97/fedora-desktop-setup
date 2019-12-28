@@ -1,0 +1,26 @@
+vscode_configuration:
+    editor.cursorBlinking: smooth
+    editor.cursorSmoothCaretAnimation: true
+    editor.cursorStyle: block
+    editor.smoothScrolling: true
+    editor.tabSize: 2
+    files.autoGuessEncoding: true
+    files.trimFinalNewlines: true
+    files.trimTrailingWhitespace: true
+    git.autoStash: true
+    git.autofetch: true
+    git.confirmSync: false
+    git.enableSmartCommit: true
+    git.fetchOnPull: true
+    git.rebaseWhenSync: true
+    git.showPushSuccessNotification: true
+    terminal.integrated.cursorBlinking: true
+    terminal.integrated.experimentalUseTitleEvent: true
+    terminal.integrated.scrollback: 100000
+    vsicons.dontShowNewVersionMessage: true
+    window.title: ${dirty}${activeEditorShort}${separator}${rootName}
+    window.titleBarStyle: custom
+    workbench.iconTheme: vscode-icons
+    workbench.tree.renderIndentGuides: always
+vscode_extensions:
+- vscode-icons-team.vscode-icons

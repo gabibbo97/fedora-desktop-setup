@@ -1,0 +1,23 @@
+---
+- name: Install GNOME tweaks
+  dnf:
+    name: gnome-tweaks
+  become: true
+
+- name: Install GNOME shell extensions
+  dnf:
+    name:
+      - gnome-shell-extension-background-logo
+      - gnome-shell-extension-disconnect-wifi
+      - gnome-shell-extension-drive-menu
+      - gnome-shell-extension-no-topleft-hot-corner
+      - gnome-shell-extension-refresh-wifi
+      - gnome-shell-extension-topicons-plus
+  become: true
+
+- name: Configure GNOME
+  dconf:
+    key: "{{ item['key'] }}"
+    value: "{{ item['value'] }}"
+  with_dict: "{{ gnome_dconf }}"
+

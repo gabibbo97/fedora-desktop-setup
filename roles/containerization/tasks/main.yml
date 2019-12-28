@@ -1,0 +1,10 @@
+---
+- name: Install container tools
+  dnf:
+    name:
+      - buildah
+      - podman
+      - podman-compose
+      - skopeo
+      - toolbox
+  become: true

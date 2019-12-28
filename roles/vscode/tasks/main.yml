@@ -1,0 +1,38 @@
+---
+- name: Install Fedora package
+  block:
+    - name: Add Microsoft Visual Studio Code repository
+      yum_repository:
+        name: vscode
+        description: Visual Studio Code - Microsoft
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        gpgcheck: true
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    - name: Install Visual Studio Code
+      dnf:
+        name: code
+  become: true
+
+# Configuration
+- name: Create Visual Studio Code configuration directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/Code/User"
+    state: directory
+- name: Write Visual Studio Code configuration
+  copy:
+    content: "{{ vscode_configuration | to_nice_json }}"
+    dest: "{{ ansible_user_dir }}/.config/Code/User/settings.json"
+    force: true
+
+# Extensions
+- name: Parse Visual Studio Code extensions
+  command: code --list-extensions
+  changed_when: false
+  register: vscode_installed_extensions
+
+- name: Install missing Visual Studio Code extensions
+  command: "code --install-extension {{ item }}"
+  loop: "{{ vscode_extensions | difference(vscode_installed_extensions['stdout_lines']) }}"
+- name: Uninstall extraneous Visual Studio Code extensions
+  command: "code --install-extension {{ item }}"
+  loop: "{{ vscode_installed_extensions['stdout_lines'] | difference(vscode_extensions) }}"

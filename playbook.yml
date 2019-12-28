@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  become: true
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Install playbook prerequisites
+      dnf:
+        name:
+          - python-psutil
+- hosts: localhost
+  connection: local
+  become: false
+  roles:
+    # System
+    - enable-passwordless-sudo
+    - rpmfusion
+    - locale
+    # Applications
+    - containerization
+    - k8s
+    - gnome
+    - vscode
+    - zsh

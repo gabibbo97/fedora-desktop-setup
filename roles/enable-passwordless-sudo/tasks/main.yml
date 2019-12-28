@@ -1,0 +1,11 @@
+---
+- name: Enable passwordless sudo
+  copy:
+    content: '%wheel	ALL=(ALL)	NOPASSWD: ALL'
+    dest: /etc/sudoers.d/passwordless
+    force: true
+    mode: 0440
+    owner: root
+    group: root
+    validate: visudo --check --file=%s --strict
+  become: true
