@@ -1,6 +1,8 @@
 ---
 zsh_aliases:
   cp: 'cp --reflink=auto'
+  docker: 'podman'
+  docker-compose: 'podman-compose'
 
 zsh_plugins:
   zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
