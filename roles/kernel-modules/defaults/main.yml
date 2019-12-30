@@ -1,0 +1,20 @@
+---
+# Defined properties
+module_per_machine_settings:
+  longotech-beast:
+    amdgpu:
+      options:
+        - cik_support=1
+        - si_support=1
+    radeon:
+      options:
+        - cik_support=0
+        - si_support=0
+module_global_settings: {}
+# Calculated properties
+module_settings: >-
+  {%- if ansible_hostname in module_per_machine_settings -%}
+  {{- module_global_settings | combine(module_per_machine_settings[ansible_hostname]) -}}
+  {%- else -%}
+  {{- module_global_settings -}}
+  {%- endif -%}

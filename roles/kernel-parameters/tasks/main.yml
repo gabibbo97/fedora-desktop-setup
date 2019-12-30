@@ -1,0 +1,25 @@
+---
+- name: Install grubby
+  dnf:
+    name: grubby
+  become: true
+
+# Kernel args reconfiguration
+- name: Reconfigure kernel arguments
+  block:
+    - name: Get current kernel args
+      shell: >-
+        grubby --info=$(grubby --default-kernel) | grep 'args' | grep -oE '"[^"]+"' | tr -d '"' | tr ' ' '\n' | sort
+      register: kernel_info
+      changed_when: false
+      become: true
+
+    - name: Get list of required arguments
+      set_fact:
+        add_kernel_args: "{{ kernel_parameters[ansible_hostname] | difference(kernel_info['stdout_lines']) }}"
+
+    - name: Set kernel arguments
+      command: "grubby --update-kernel=ALL --args='{{ item }}'"
+      loop: "{{ add_kernel_args }}"
+      when: add_kernel_args | length > 0
+  when: ansible_hostname in kernel_parameters

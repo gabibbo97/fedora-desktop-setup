@@ -14,8 +14,10 @@
   roles:
     # System
     - enable-passwordless-sudo
-    - rpmfusion
+    - kernel-modules
+    - kernel-parameters
     - locale
+    - rpmfusion
     # Applications
     - apps
     - coding
