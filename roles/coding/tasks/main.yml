@@ -13,5 +13,7 @@
       - eclipse-egit # Eclipse git integration
       - eclipse-jdt # Eclipse Java tools
       - eclipse-webtools-javaee # Java EE tools
+      - eclipse-m2e-core # Maven
       # Tool
+      - make
   become: true
