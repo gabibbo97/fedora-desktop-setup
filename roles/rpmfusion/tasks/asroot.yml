@@ -13,7 +13,7 @@
       - rpmfusion-free-release-tainted
       - rpmfusion-nonfree-release-tainted
 
-- name: Update groups extended by RPMFusion
+- name: Update groups extended by RPMFusion # noqa 403 we need an update
   dnf:
     name:
       - '@core'

@@ -29,10 +29,16 @@
   command: code --list-extensions
   changed_when: false
   register: vscode_installed_extensions
+- name: Parse missing / extraneous extensions
+  set_fact:
+    vscode_missing_extensions: "{{ vscode_extensions | difference(vscode_installed_extensions['stdout_lines']) }}"
+    vscode_extraneous_extensions: "{{ vscode_installed_extensions['stdout_lines'] | difference(vscode_extensions) }}"
 
 - name: Install missing Visual Studio Code extensions
   command: "code --install-extension {{ item }}"
-  loop: "{{ vscode_extensions | difference(vscode_installed_extensions['stdout_lines']) }}"
+  loop: "{{ vscode_missing_extensions }}"
+  when: vscode_missing_extensions | length > 0
 - name: Uninstall extraneous Visual Studio Code extensions
   command: "code --install-extension {{ item }}"
-  loop: "{{ vscode_installed_extensions['stdout_lines'] | difference(vscode_extensions) }}"
+  loop: "{{ vscode_extraneous_extensions }}"
+  when: vscode_extraneous_extensions | length > 0

@@ -1,7 +1,7 @@
 ---
 - name: Enable passwordless sudo
   copy:
-    content: '%wheel	ALL=(ALL)	NOPASSWD: ALL'
+    src: passwordless
     dest: /etc/sudoers.d/passwordless
     force: true
     mode: 0440

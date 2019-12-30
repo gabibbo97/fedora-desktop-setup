@@ -13,6 +13,7 @@
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ ansible_user_dir }}/.oh-my-zsh"
+    version: HEAD
 
 - name: Create oh-my-zsh customization directory
   file:
@@ -33,6 +34,7 @@
   git:
     repo: "{{ item['value'] }}"
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/{{ item['key'] }}"
+    version: HEAD
   with_dict: "{{ zsh_plugins }}"
   loop_control:
     label: "{{ item['key'] }}"
