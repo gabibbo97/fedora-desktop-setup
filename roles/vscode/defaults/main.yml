@@ -3,8 +3,14 @@ vscode_configuration:
     editor.cursorSmoothCaretAnimation: true
     editor.cursorStyle: block
     editor.smoothScrolling: true
+    editor.suggestSelection: first
     editor.tabSize: 2
     files.autoGuessEncoding: true
+    files.exclude:
+        '**/.classpath': true
+        '**/.factorypath': true
+        '**/.project': true
+        '**/.settings': true
     files.trimFinalNewlines: true
     files.trimTrailingWhitespace: true
     git.autoStash: true
@@ -14,10 +20,16 @@ vscode_configuration:
     git.fetchOnPull: true
     git.rebaseWhenSync: true
     git.showPushSuccessNotification: true
+    java.completion.guessMethodArguments: true
+    java.errors.incompleteClasspath.severity: ignore
+    java.implementationsCodeLens.enabled: true
+    java.maxConcurrentBuilds: "{{ ansible_processor_vcpus }}"
+    java.referencesCodeLens.enabled: true
     terminal.integrated.cursorBlinking: true
     terminal.integrated.experimentalUseTitleEvent: true
     terminal.integrated.scrollback: 100000
     vsicons.dontShowNewVersionMessage: true
+    vsintellicode.modify.editor.suggestSelection: automaticallyOverrodeDefaultValue
     window.title: ${dirty}${activeEditorShort}${separator}${rootName}
     window.titleBarStyle: custom
     workbench.iconTheme: vscode-icons
@@ -26,7 +38,14 @@ vscode_configuration:
 vscode_extensions:
 - bbenoist.vagrant
 - ms-kubernetes-tools.vscode-kubernetes-tools
+- redhat.java
 - redhat.vscode-yaml
+- VisualStudioExptTeam.vscodeintellicode
+- vscjava.vscode-java-debug
+- vscjava.vscode-java-dependency
+- vscjava.vscode-java-pack
+- vscjava.vscode-java-test
+- vscjava.vscode-maven
 - vscode-icons-team.vscode-icons
 - vscoss.vscode-ansible
 - yzhang.markdown-all-in-one
