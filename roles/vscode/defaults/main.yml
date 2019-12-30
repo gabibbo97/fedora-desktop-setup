@@ -21,6 +21,7 @@ vscode_configuration:
     window.title: ${dirty}${activeEditorShort}${separator}${rootName}
     window.titleBarStyle: custom
     workbench.iconTheme: vscode-icons
+    workbench.startupEditor: none
     workbench.tree.renderIndentGuides: always
 vscode_extensions:
 - bbenoist.vagrant
