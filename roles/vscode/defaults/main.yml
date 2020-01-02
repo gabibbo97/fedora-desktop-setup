@@ -23,7 +23,7 @@ vscode_configuration:
     java.completion.guessMethodArguments: true
     java.errors.incompleteClasspath.severity: ignore
     java.implementationsCodeLens.enabled: true
-    java.maxConcurrentBuilds: "{{ ansible_processor_vcpus }}"
+    java.maxConcurrentBuilds: 8
     java.referencesCodeLens.enabled: true
     terminal.integrated.cursorBlinking: true
     terminal.integrated.experimentalUseTitleEvent: true
@@ -38,7 +38,9 @@ vscode_configuration:
 vscode_extensions:
 - bbenoist.vagrant
 - ms-kubernetes-tools.vscode-kubernetes-tools
+- ms-vscode.cpptools
 - redhat.java
+- redhat.vscode-xml
 - redhat.vscode-yaml
 - VisualStudioExptTeam.vscodeintellicode
 - vscjava.vscode-java-debug
