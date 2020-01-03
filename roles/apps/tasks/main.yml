@@ -6,7 +6,7 @@
       - obs-studio # Recording
       - olive # Video editor
       - pulseeffects # Audio effects
-      - vlc # Media player
+      - gnome-mpv # Media player
       # Communication
       - chromium-vaapi # Web browser
       - firefox # Web browser
