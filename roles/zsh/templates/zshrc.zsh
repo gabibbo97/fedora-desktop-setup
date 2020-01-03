@@ -3,6 +3,7 @@
 {% include 'oh-my-zsh.zsh' %}
 
 # Functions
+{% include 'functions/fedora-test-updates.zsh' %}
 {% include 'functions/zsh-update-plugins.zsh' %}
 
 # Aliases
