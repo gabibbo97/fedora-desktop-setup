@@ -25,6 +25,9 @@ vscode_configuration:
     java.implementationsCodeLens.enabled: true
     java.maxConcurrentBuilds: 8
     java.referencesCodeLens.enabled: true
+    rust-client.disableRustup: true
+    rust.clippy_preference: 'on'
+    rust.jobs: 8
     terminal.integrated.cursorBlinking: true
     terminal.integrated.experimentalUseTitleEvent: true
     terminal.integrated.scrollback: 100000
@@ -37,11 +40,14 @@ vscode_configuration:
     workbench.tree.renderIndentGuides: always
 vscode_extensions:
 - bbenoist.vagrant
+- bungcip.better-toml
 - ms-kubernetes-tools.vscode-kubernetes-tools
 - ms-vscode.cpptools
 - redhat.java
 - redhat.vscode-xml
 - redhat.vscode-yaml
+- rust-lang.rust
+- serayuzgur.crates
 - VisualStudioExptTeam.vscodeintellicode
 - vscjava.vscode-java-debug
 - vscjava.vscode-java-dependency

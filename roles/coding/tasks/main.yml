@@ -8,6 +8,12 @@
   dnf:
     name:
       # Compilers
+      ## Rust
+      - cargo
+      - clippy
+      - rls
+      - rust
+      - rustfmt
       # IDEs
       ## Eclipse
       - eclipse-egit # Eclipse git integration
