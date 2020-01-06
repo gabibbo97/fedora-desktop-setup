@@ -1,0 +1,7 @@
+---
+- name: Create KSM settings file inside tmpfiles.d
+  template:
+    src: ksm.conf
+    dest: /etc/tmpfiles.d/ksm.conf
+  notify: Reload systemd-tmpfiles
+  become: true

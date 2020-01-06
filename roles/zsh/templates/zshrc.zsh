@@ -4,6 +4,9 @@
 
 # Functions
 {% include 'functions/fedora-test-updates.zsh' %}
+
+{% include 'functions/ksm-status.zsh' %}
+
 {% include 'functions/zsh-update-plugins.zsh' %}
 
 # Aliases
