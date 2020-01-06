@@ -10,6 +10,7 @@
       # Communication
       - chromium-vaapi # Web browser
       - firefox # Web browser
+      - keepassxc # Password manager
       - telegram-desktop
       - transmission # Torrent client
       # Gaming
