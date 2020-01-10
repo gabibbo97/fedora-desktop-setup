@@ -1,0 +1,14 @@
+---
+- name: Install Minikube v1.6.2
+  dnf:
+    name: https://github.com/kubernetes/minikube/releases/download/v1.6.2/minikube-1.6.2.rpm
+  become: true
+  register: minikube_install
+- name: Install docker-machine-driver-kvm2 for Minikube v1.6.2
+  get_url:
+    url: https://github.com/kubernetes/minikube/releases/download/v1.6.2/docker-machine-driver-kvm2
+    dest: /usr/local/bin/docker-machine-driver-kvm2
+    mode: 0755
+    force: true
+  become: true
+  when: minikube_install is changed
