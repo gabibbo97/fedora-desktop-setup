@@ -7,6 +7,8 @@
 
 {% include 'functions/ksm-status.zsh' %}
 
+{% include 'functions/zsh-forget.zsh' %}
+
 {% include 'functions/zsh-update-plugins.zsh' %}
 
 # Aliases
