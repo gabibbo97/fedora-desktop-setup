@@ -55,6 +55,8 @@
 - name: Install CLI apps
   dnf:
     name:
+      # Windows executables
+      - wine
       # Compression
       - zstd
       # Virtualisation
