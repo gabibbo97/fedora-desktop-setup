@@ -5,8 +5,4 @@
     dest: "/etc/modprobe.d/99-ansible-{{ item['key'] }}.conf"
   with_dict: "{{ module_settings }}"
   become: true
-  register: modprobe_templates
-
-- name: Regenerate initramfs
-  command: "dracut -vf /boot/initramfs-{{ ansible_kernel }}.img {{ ansible_kernel }}"
-  when: modprobe_templates is changed
+  notify: Regenerate initramfs
