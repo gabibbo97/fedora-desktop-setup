@@ -41,13 +41,20 @@ vscode_configuration:
 vscode_extensions:
 - bbenoist.vagrant
 - bungcip.better-toml
+- coolbear.systemd-unit-file
+- DavidAnson.vscode-markdownlint
+- heptio.jsonnet
+- mikestead.dotenv
+- ms-azuretools.vscode-docker
 - ms-kubernetes-tools.vscode-kubernetes-tools
+- ms-python.python
 - ms-vscode.cpptools
 - redhat.java
 - redhat.vscode-xml
 - redhat.vscode-yaml
 - rust-lang.rust
 - serayuzgur.crates
+- timonwong.shellcheck
 - VisualStudioExptTeam.vscodeintellicode
 - vscjava.vscode-java-debug
 - vscjava.vscode-java-dependency
@@ -56,4 +63,5 @@ vscode_extensions:
 - vscjava.vscode-maven
 - vscode-icons-team.vscode-icons
 - vscoss.vscode-ansible
+- webfreak.debug
 - yzhang.markdown-all-in-one
