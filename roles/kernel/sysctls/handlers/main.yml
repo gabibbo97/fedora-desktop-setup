@@ -1,0 +1,4 @@
+---
+- name: Reload sysctls
+  command: sysctl --system -w
+  become: true

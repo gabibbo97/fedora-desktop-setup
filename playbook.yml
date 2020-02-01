@@ -13,19 +13,17 @@
   become: false
   roles:
     # System
-    - enable-passwordless-sudo
-    - kernel/ksm
-    - kernel/modules
-    - kernel/parameters
-    - locale
-    - rpmfusion
+    - { name: enable-passwordless-sudo, tags: [ "enable-passwordless-sudo" ] }
+    - { name: kernel, tags: [ "kernel" ] }
+    - { name: locale, tags: [ "locale" ] }
+    - { name: rpmfusion, tags: [ "rpmfusion" ] }
     # Applications
-    - apps
-    - coding
-    - containerization
-    - git
-    - gnome
-    - k8s
-    - vagrant
-    - vscode
-    - zsh
+    - { name: apps, tags: [ "apps" ] }
+    - { name: coding, tags: [ "coding" ] }
+    - { name: containerization, tags: [ "containerization" ] }
+    - { name: git, tags: [ "git" ] }
+    - { name: gnome, tags: [ "gnome" ] }
+    - { name: k8s, tags: [ "k8s" ] }
+    - { name: vagrant, tags: [ "vagrant" ] }
+    - { name: vscode, tags: [ "vscode" ] }
+    - { name: zsh, tags: [ "zsh" ] }
