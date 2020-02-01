@@ -48,6 +48,28 @@
   loop_control:
     label: "{{ item | basename }}"
 
+# Functions
+- name: Create ZSH custom plugin folder
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/g4b1bb097"
+    state: directory
+- name: Copy ZSH plugin
+  template:
+    src: g4b1bb097.plugin.zsh
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/g4b1bb097"
+- name: Create ZSH custom plugin functions folder
+  file:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/g4b1bb097/functions"
+    state: directory
+- name: Create ZSH custom plugin functions
+  template:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/g4b1bb097/functions/{{ item | basename | splitext | first }}"
+  with_fileglob: "{{ role_path }}/templates/functions/*.zsh"
+  loop_control:
+    label: "{{ item | basename }}"
+  register: plugin_custom_functions
+
 # Zshrc
 - name: Template zshrc
   template:

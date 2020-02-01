@@ -72,6 +72,8 @@ plugins=(
     # Builtins
     colored-man-pages
     git
+    # Mine
+    g4b1bb097
     # Extras
     zsh-autosuggestions
     zsh-completions
