@@ -55,6 +55,8 @@
 - name: Install CLI apps
   dnf:
     name:
+      # File manipulation
+      - jq
       # Windows executables
       - wine
       # Compression
