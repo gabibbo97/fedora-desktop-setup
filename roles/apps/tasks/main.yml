@@ -74,3 +74,14 @@
     groups: "{{ item }}"
   loop: ['wireshark']
   become: true
+
+- name: Add LaTeX stuff
+  dnf:
+    name:
+      - 'tex(babel.sty)'
+      - 'tex(beamer.cls)'
+      - 'tex(cancel.sty)'
+      - 'tex(lastpage.sty)'
+      - texlive-babel-italian
+      - texlive-collection-fontsrecommended
+  become: true
