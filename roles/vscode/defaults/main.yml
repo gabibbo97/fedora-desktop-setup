@@ -5,6 +5,7 @@ vscode_configuration:
     editor.smoothScrolling: true
     editor.suggestSelection: first
     editor.tabSize: 2
+    explorer.confirmDragAndDrop: false
     files.autoGuessEncoding: true
     files.exclude:
         '**/.classpath': true
@@ -25,6 +26,10 @@ vscode_configuration:
     java.implementationsCodeLens.enabled: true
     java.maxConcurrentBuilds: 8
     java.referencesCodeLens.enabled: true
+    python.formatting.autopep8Args:
+    - --jobs
+    - '8'
+    python.jediEnabled: false
     rust-client.disableRustup: true
     rust.clippy_preference: 'on'
     rust.jobs: 8
