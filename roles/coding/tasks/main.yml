@@ -22,6 +22,8 @@
       - eclipse-m2e-core # Maven
       # Linter
       - ShellCheck
+      - python-autopep8
+      - python-pylint
       # Tool
       - make
   become: true
