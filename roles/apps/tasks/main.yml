@@ -55,6 +55,8 @@
 - name: Install CLI apps
   dnf:
     name:
+      # Benchmarking
+      - hyperfine
       # File manipulation
       - jq
       # Windows executables
