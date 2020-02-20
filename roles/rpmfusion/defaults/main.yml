@@ -1,0 +1,3 @@
+---
+fedora_rawhide: "{{ lookup('file','/etc/os-release') is search('rawhide') }}"
+rpmfusion_repo: "{{ ansible_distribution_release if not fedora_rawhide else 'rawhide' }}"
