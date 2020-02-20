@@ -12,7 +12,7 @@
   connection: local
   become: false
   vars:
-    fedora_rawhide: "{{ lookup('file','/etc/os-release') is search('rawhide') }}"
+    fedora_rawhide: "{{ lookup('file','/etc/os-release') is search('rawhide') | bool }}"
   roles:
     # System
     - { name: enable-passwordless-sudo, tags: [ "enable-passwordless-sudo" ] }

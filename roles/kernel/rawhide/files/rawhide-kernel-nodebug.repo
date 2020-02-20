@@ -1,0 +1,25 @@
+# Place this file in your /etc/yum.repos.d/ directory
+
+[fedora-rawhide-kernel-nodebug]
+name=Rawhide kernels built without debugging turned on
+baseurl=https://dl.fedoraproject.org/pub/alt/rawhide-kernel-nodebug/$basearch
+enabled=1
+skip_if_unavailable=1
+metadata_expire=6h
+gpgcheck=0
+
+[fedora-rawhide-kernel-nodebug-debuginfo]
+name=Rawhide kernels built without debugging turned on - Debug
+baseurl=https://dl.fedoraproject.org/pub/alt/rawhide-kernel-nodebug/debuginfo
+enabled=0
+skip_if_unavailable=1
+metadata_expire=6h
+gpgcheck=0
+
+[fedora-rawhide-kernel-nodebug-source]
+name=Rawhide kernels built without debugging turned on - Source
+baseurl=https://dl.fedoraproject.org/pub/alt/rawhide-kernel-nodebug/SRPMS
+enabled=0
+skip_if_unavailable=1
+metadata_expire=6h
+gpgcheck=0

@@ -4,3 +4,4 @@ dependencies:
   - role: kernel/modules
   - role: kernel/parameters
   - role: kernel/sysctls
+  - { role: kernel/rawhide, when: fedora_rawhide }
