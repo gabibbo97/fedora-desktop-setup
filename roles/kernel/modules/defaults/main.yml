@@ -1,7 +1,7 @@
 ---
 # Defined properties
 module_per_machine_settings:
-  longotech-beast:
+  desktop:
     amdgpu:
       options:
         - cik_support=1
