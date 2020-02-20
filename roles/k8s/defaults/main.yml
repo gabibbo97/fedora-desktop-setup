@@ -1,4 +1,4 @@
 ---
-helm_version: v3.0.3
+helm_version: v3.1.0
 jsonnet_version: v0.15.0
-minikube_version: v1.7.2
+minikube_version: v1.7.3
