@@ -11,6 +11,8 @@
 - hosts: localhost
   connection: local
   become: false
+  vars:
+    fedora_rawhide: "{{ lookup('file','/etc/os-release') is search('rawhide') }}"
   roles:
     # System
     - { name: enable-passwordless-sudo, tags: [ "enable-passwordless-sudo" ] }
