@@ -8,7 +8,9 @@
 - name: Install compilers, IDEs and tools for development
   dnf:
     name:
-      # Compilers
+      # Compilers / Interpreters / JIT / YouNameIt
+      ## Java
+      - java-latest-openjdk
       ## Rust
       - cargo
       - clippy
