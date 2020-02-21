@@ -1,15 +1,6 @@
 ---
 # Defined properties
-module_per_machine_settings:
-  desktop:
-    amdgpu:
-      options:
-        - cik_support=1
-        - si_support=1
-    radeon:
-      options:
-        - cik_support=0
-        - si_support=0
+module_per_machine_settings: {}
 module_global_settings: {}
 # Calculated properties
 module_settings: >-
