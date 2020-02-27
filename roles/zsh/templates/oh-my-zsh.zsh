@@ -72,6 +72,7 @@ plugins=(
     # Builtins
     colored-man-pages
     git
+    kubectl
     # Mine
     g4b1bb097
     # Extras
