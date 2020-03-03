@@ -26,6 +26,7 @@
     - { name: git, tags: [ "git" ] }
     - { name: gnome, tags: [ "gnome" ] }
     - { name: k8s, tags: [ "k8s" ] }
+    - { name: pulseaudio, tags: [ "pulseaudio" ] }
     - { name: vagrant, tags: [ "vagrant" ] }
     - { name: vscode, tags: [ "vscode" ] }
     - { name: zsh, tags: [ "zsh" ] }
