@@ -21,6 +21,7 @@
     - { name: rpmfusion, tags: [ "rpmfusion" ] }
     # Applications
     - { name: apps, tags: [ "apps" ] }
+    - { name: aria2c, tags: [ "aria2c" ] }
     - { name: coding, tags: [ "coding" ] }
     - { name: containerization, tags: [ "containerization" ] }
     - { name: git, tags: [ "git" ] }
