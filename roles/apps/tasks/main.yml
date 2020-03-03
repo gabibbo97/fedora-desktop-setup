@@ -82,6 +82,7 @@
       - 'tex(babel.sty)'
       - 'tex(beamer.cls)'
       - 'tex(cancel.sty)'
+      - 'tex(fancyhdr.sty)'
       - 'tex(lastpage.sty)'
       - texlive-babel-italian
       - texlive-collection-fontsrecommended
