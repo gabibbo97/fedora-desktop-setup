@@ -30,4 +30,4 @@
     - { name: pulseaudio, tags: [ "pulseaudio" ] }
     - { name: vagrant, tags: [ "vagrant" ] }
     - { name: vscode, tags: [ "vscode" ] }
-    - { name: zsh, tags: [ "zsh" ] }
+    - { name: shells, tags: [ "shells" ] }

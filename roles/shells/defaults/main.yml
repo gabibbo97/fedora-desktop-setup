@@ -1,16 +1,12 @@
 ---
-zsh_aliases:
+shell_aliases:
   cp: 'cp --reflink=auto'
   diff: colordiff
   docker-compose: 'podman-compose'
   docker: 'podman'
   find: "find -O3"
   gzip: "pigz"
+  ls: "ls --color=auto"
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
   xz: "xz --threads={{ ansible_processor_vcpus }}"
   zstd: "zstd -T{{ ansible_processor_vcpus }}"
-
-zsh_plugins:
-  zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
-  zsh-completions: https://github.com/zsh-users/zsh-completions
-  zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
