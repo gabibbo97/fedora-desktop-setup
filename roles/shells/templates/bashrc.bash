@@ -1,5 +1,11 @@
 # Fedora setup
 if [ -f /etc/bashrc ]; then . /etc/bashrc; fi
+# Path
+{% for dir in shell_path_extensions %}
+if [ -d "{{ dir }}" ]; then
+	export PATH="{{ dir }}:$PATH"
+fi
+{% endfor %}
 # Aliases
 {% for alias, command in shell_aliases.items() %}
 alias {{ alias }}={{ command | quote }}

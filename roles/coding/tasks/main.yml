@@ -11,12 +11,6 @@
       # Compilers / Interpreters / JIT / YouNameIt
       ## Java
       - java-latest-openjdk
-      ## Rust
-      - cargo
-      - clippy
-      - rls
-      - rust
-      - rustfmt
       # IDEs
       ## Eclipse
       - eclipse-egit # Eclipse git integration
@@ -28,3 +22,13 @@
       # Tool
       - make
   become: true
+
+- name: Check Rustup presence
+  stat:
+    path: "{{ ansible_user_dir }}/.cargo/bin/rustup"
+  register: rustup
+
+- name: Install Rust
+  shell: >-
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  when: not rustup['stat']['exists']

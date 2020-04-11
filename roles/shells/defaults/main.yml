@@ -10,3 +10,6 @@ shell_aliases:
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
   xz: "xz --threads={{ ansible_processor_vcpus }}"
   zstd: "zstd -T{{ ansible_processor_vcpus }}"
+
+shell_path_extensions:
+  - "{{ ansible_user_dir }}/.cargo/bin"
