@@ -4,6 +4,7 @@ shell_aliases:
   diff: colordiff
   docker-compose: 'podman-compose'
   docker: 'podman'
+  expose-via-apache: 'podman run --rm -p 8080:80 -v $PWD:/usr/local/apache2/htdocs/ httpd'
   find: "find -O3"
   gzip: "pigz"
   ls: "ls --color=auto"
