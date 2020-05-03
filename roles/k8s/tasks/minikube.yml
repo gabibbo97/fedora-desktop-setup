@@ -1,14 +1,9 @@
 ---
-- name: "Install Minikube {{ minikube_version }}"
+- name: "Install Minikube"
   dnf:
-    name: "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/minikube-{{ minikube_version[1:] }}-0.x86_64.rpm"
+    name: "{{ minikube_rpm_url }}"
   become: true
-  register: minikube_install
-- name: "Install docker-machine-driver-kvm2 for Minikube {{ minikube_version }}"
-  get_url:
-    url: "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/docker-machine-driver-kvm2"
-    dest: /usr/local/bin/docker-machine-driver-kvm2
-    mode: 0755
-    force: true
+- name: "Install docker-machine-driver-kvm2 for Minikube"
+  dnf:
+    name: "{{ minikube_kvm_url }}"
   become: true
-  when: minikube_install is changed
