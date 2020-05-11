@@ -15,6 +15,7 @@
       ## Eclipse
       - eclipse-egit # Eclipse git integration
       - eclipse-jdt # Eclipse Java tools
+      - eclipse-mpc # Marketplace
       # Linter
       - ShellCheck
       - python-autopep8
