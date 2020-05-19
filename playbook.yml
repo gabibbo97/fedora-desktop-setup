@@ -24,10 +24,11 @@
     - { name: aria2c, tags: [ "aria2c" ] }
     - { name: coding, tags: [ "coding" ] }
     - { name: containerization, tags: [ "containerization" ] }
+    - { name: flatpak, tags: [ "flatpak" ] }
     - { name: git, tags: [ "git" ] }
     - { name: gnome, tags: [ "gnome" ] }
     - { name: k8s, tags: [ "k8s" ] }
     - { name: pulseaudio, tags: [ "pulseaudio" ] }
+    - { name: shells, tags: [ "shells" ] }
     - { name: vagrant, tags: [ "vagrant" ] }
     - { name: vscode, tags: [ "vscode" ] }
-    - { name: shells, tags: [ "shells" ] }

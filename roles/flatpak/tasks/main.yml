@@ -1,0 +1,16 @@
+---
+- name: Add FlatHub repo
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Flatpak applications
+  flatpak:
+    name: "{{ item }}"
+  loop:
+    - com.google.AndroidStudio
+    - com.jetbrains.IntelliJ-IDEA-Community
+    - io.dbeaver.DBeaverCommunity
+    - org.eclipse.Java
+    - org.octave.Octave
+    - org.telegram.desktop

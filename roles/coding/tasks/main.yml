@@ -1,21 +1,10 @@
 ---
-- name: Enable Eclipse module
-  command: dnf module enable -y eclipse:latest
-  changed_when: false
-  become: true
-  when: not fedora_rawhide
-
 - name: Install compilers, IDEs and tools for development
   dnf:
     name:
       # Compilers / Interpreters / JIT / YouNameIt
       ## Java
       - java-latest-openjdk
-      # IDEs
-      ## Eclipse
-      - eclipse-egit # Eclipse git integration
-      - eclipse-jdt # Eclipse Java tools
-      - eclipse-mpc # Marketplace
       # Linter
       - ShellCheck
       - python-autopep8

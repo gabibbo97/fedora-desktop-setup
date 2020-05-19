@@ -1,10 +1,11 @@
 ---
 shell_aliases:
   cp: 'cp --reflink=auto'
+  deduplicate: "duperemove -r -d -h -b 4096 --io-threads={{ ansible_processor_vcpus * 2 }} --cpu-threads={{ ansible_processor_vcpus }} --dedupe-options=same,fiemap --lookup-extents=yes --hash=xxhash"
   diff: colordiff
   docker-compose: 'podman-compose'
   docker: 'podman'
-  expose-via-apache: 'podman run --rm -p 8080:80 -v $PWD:/usr/local/apache2/htdocs/ httpd'
+  expose-via-apache: 'podman run --rm -p 8080:80 --security-opt label=disable -v $PWD:/usr/local/apache2/htdocs/ httpd'
   find: "find -O3"
   gzip: "pigz"
   ls: "ls --color=auto"

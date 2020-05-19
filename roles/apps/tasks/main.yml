@@ -11,7 +11,6 @@
       - chromium-vaapi # Web browser
       - firefox # Web browser
       - keepassxc # Password manager
-      - telegram-desktop
       - transmission # Torrent client
       # Gaming
       - openttd
@@ -22,11 +21,6 @@
       - gimp # Normal images
       - hugin # Panoramas
       - inkscape # Vector images
-      # Science
-      - octave
-      - octave-image
-      - octave-optim
-      - octave-symbolic
       # Tools
       - wireshark
       - youtube-dl
@@ -38,6 +32,7 @@
       - gnome-boxes
       - gnome-calculator
       - gnome-calendar
+      - gnome-extensions-app
       - gnome-firmware
       - gnome-games
       - gnome-latex
@@ -56,6 +51,8 @@
   dnf:
     name:
       # Benchmarking
+      # Parallel
+      - parallel
       # File manipulation
       - jq
       # Windows executables
