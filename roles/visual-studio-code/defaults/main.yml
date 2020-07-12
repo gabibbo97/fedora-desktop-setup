@@ -3,24 +3,28 @@ vscode_extensions:
   - vscode-icons-team.vscode-icons
 
 vscode_settings:
-  workbench.iconTheme: vscode-icons
+  editor.cursorBlinking: smooth
+  editor.cursorSmoothCaretAnimation: true
+  editor.find.autoFindInSelection: multiline
+  editor.fontFamily: "'JetBrains Mono Regular','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+  editor.formatOnPaste: true
   editor.renderControlCharacters: true
   editor.renderWhitespace: boundary
   editor.roundedSelection: false
   editor.smoothScrolling: true
   editor.tabSize: 2
   editor.wrappingStrategy: advanced
-  editor.cursorSmoothCaretAnimation: true
-  editor.cursorBlinking: smooth
-  editor.find.autoFindInSelection: multiline
-  editor.fontFamily: "'JetBrains Mono Regular','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
-  editor.formatOnPaste: true
   files.autoGuessEncoding: true
   files.insertFinalNewline: true
   files.trimFinalNewlines: true
   files.trimTrailingWhitespace: true
-  workbench.list.smoothScrolling: true
-  workbench.tree.renderIndentGuides: always
-  workbench.editor.highlightModifiedTabs: true
+  git.autofetch: true
+  git.confirmSync: false
+  git.enableSmartCommit: true
+  vsicons.dontShowNewVersionMessage: true
   window.title: ${dirty}${activeEditorShort}${separator}${rootName}
   window.titleBarStyle: custom
+  workbench.editor.highlightModifiedTabs: true
+  workbench.iconTheme: vscode-icons
+  workbench.list.smoothScrolling: true
+  workbench.tree.renderIndentGuides: always
