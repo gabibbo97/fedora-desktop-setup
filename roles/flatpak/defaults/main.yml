@@ -16,3 +16,4 @@ flatpaks:
       - org.octave.Octave
       - org.olivevideoeditor.Olive
       - org.telegram.desktop
+      - org.videolan.VLC
