@@ -1,34 +1,13 @@
 ---
 - hosts: localhost
-  become: true
   connection: local
-  gather_facts: false
-  tasks:
-    - name: Install playbook prerequisites
-      dnf:
-        name:
-          - python-psutil
-- hosts: localhost
-  connection: local
-  become: false
-  vars:
-    fedora_rawhide: "{{ lookup('file','/etc/os-release') is search('rawhide') | bool }}"
   roles:
-    # System
-    - { name: enable-passwordless-sudo, tags: [ "enable-passwordless-sudo" ] }
-    - { name: kernel, tags: [ "kernel" ] }
-    - { name: locale, tags: [ "locale" ] }
-    - { name: rpmfusion, tags: [ "rpmfusion" ] }
-    # Applications
-    - { name: apps, tags: [ "apps" ] }
-    - { name: aria2c, tags: [ "aria2c" ] }
-    - { name: coding, tags: [ "coding" ] }
-    - { name: containerization, tags: [ "containerization" ] }
+    - { name: containers, tags: [ "containers" ] }
     - { name: flatpak, tags: [ "flatpak" ] }
-    - { name: git, tags: [ "git" ] }
-    - { name: gnome, tags: [ "gnome" ] }
+    - { name: fonts, tags: [ "fonts" ] }
     - { name: k8s, tags: [ "k8s" ] }
-    - { name: pulseaudio, tags: [ "pulseaudio" ] }
     - { name: shells, tags: [ "shells" ] }
+    - { name: sudo, tags: [ "sudo" ] }
     - { name: vagrant, tags: [ "vagrant" ] }
-    - { name: vscode, tags: [ "vscode" ] }
+    - { name: visual-studio-code, tags: [ "visual-studio-code" ] }
+    - { name: tools, tags: [ "tools" ] }

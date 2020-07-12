@@ -1,4 +1,0 @@
----
-- name: Reload systemd-tmpfiles
-  command: systemd-tmpfiles --create
-  become: true

@@ -1,0 +1,8 @@
+---
+- name: Enable passwordless sudo
+  copy:
+    content: "%wheel\tALL=(ALL)\tNOPASSWD: ALL"
+    dest: /etc/sudoers.d/passwordless
+    force: true
+    mode: 0444
+  become: true

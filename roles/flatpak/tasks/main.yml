@@ -1,16 +1,12 @@
 ---
-- name: Add FlatHub repo
-  flatpak_remote:
-    name: flathub
-    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+- import_tasks: remotes.yml
 
-- name: Install Flatpak applications
+- name: Install flatpaks
   flatpak:
-    name: "{{ item }}"
-  loop:
-    - com.google.AndroidStudio
-    - com.jetbrains.IntelliJ-IDEA-Community
-    - io.dbeaver.DBeaverCommunity
-    - org.eclipse.Java
-    - org.octave.Octave
-    - org.telegram.desktop
+    name: "{{ item[1] }}"
+    remote: "{{ item[0]['repo'] }}"
+  with_subelements:
+    - "{{ flatpaks }}"
+    - packages
+  loop_control:
+    label: "{{ item[1] }}"

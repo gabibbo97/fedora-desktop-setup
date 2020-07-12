@@ -1,2 +1,0 @@
----
-rpmfusion_repo: "{{ ansible_distribution_version if not fedora_rawhide else 'rawhide' }}"

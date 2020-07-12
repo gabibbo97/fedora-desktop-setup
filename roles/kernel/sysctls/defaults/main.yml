@@ -1,3 +1,0 @@
----
-kernel_sysctls:
-  kernel.sysrq: 1 # Enable sysrq

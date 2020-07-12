@@ -1,0 +1,19 @@
+---
+- name: Install ZSH
+  dnf:
+    name:
+      - zsh
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
+  become: true
+
+- name: Template .zshrc
+  template:
+    src: zshrc.zsh
+    dest: "{{ ansible_user_dir }}/.zshrc"
+
+- name: Set ZSH as user shell
+  user:
+    name: "{{ ansible_user }}"
+    shell: "{{ lookup('pipe', 'which zsh') }}"
+  become: true

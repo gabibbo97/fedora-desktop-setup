@@ -1,4 +1,0 @@
----
-- name: Regenerate initramfs
-  command: "dracut -vf /boot/initramfs-{{ ansible_kernel }}.img {{ ansible_kernel }}"
-  become: true

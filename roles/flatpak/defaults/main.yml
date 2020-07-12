@@ -1,0 +1,18 @@
+---
+flatpak_remotes:
+  flathub: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpaks:
+  - repo: flathub
+    packages:
+      - com.github.marktext.marktext
+      - com.google.AndroidStudio
+      - com.jetbrains.IntelliJ-IDEA-Community
+      - com.microsoft.Teams
+      - com.obsproject.Studio
+      - com.valvesoftware.Steam
+      - org.eclipse.Java
+      - org.keepassxc.KeePassXC
+      - org.octave.Octave
+      - org.olivevideoeditor.Olive
+      - org.telegram.desktop

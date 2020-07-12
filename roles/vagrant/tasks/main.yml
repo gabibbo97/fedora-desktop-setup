@@ -2,23 +2,7 @@
 - name: Install Vagrant
   dnf:
     name:
+      - vagrant
       - vagrant-libvirt
-  become: true
-
-- name: Create ~/.vagrant.d
-  file:
-    path: "{{ ansible_user_dir }}/.vagrant.d"
-    state: directory
-
-- name: Create default Vagrantfile
-  copy:
-    src: Vagrantfile
-    dest: "{{ ansible_user_dir }}/.vagrant.d/Vagrantfile"
-    force: true
-
-- name: Add current user to libvirt group
-  user:
-    append: true
-    name: "{{ ansible_user }}"
-    groups: libvirt
+      - vagrant-sshfs
   become: true

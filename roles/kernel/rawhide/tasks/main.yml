@@ -1,7 +1,0 @@
----
-- name: Add RawhideKernelNodebug repository
-  copy:
-    src: rawhide-kernel-nodebug.repo
-    dest: /etc/yum.repos.d
-    force: true
-  become: true

@@ -1,0 +1,4 @@
+---
+dependencies:
+  - { role: shells/bash, tags: [ "bash" ] }
+  - { role: shells/zsh, tags: [ "zsh" ] }

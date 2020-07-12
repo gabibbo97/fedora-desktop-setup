@@ -1,9 +1,0 @@
----
-- name: Configure git
-  git_config:
-    name: "{{ item['key'] }}"
-    value: "{{ item['value'] }}"
-    scope: global
-  with_dict: "{{ git_config }}"
-  loop_control:
-    label: "{{ item['key'] }}"

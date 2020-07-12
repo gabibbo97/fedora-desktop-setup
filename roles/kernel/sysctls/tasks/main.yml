@@ -1,7 +1,0 @@
----
-- name: Template sysctls
-  template:
-    src: sysctls.conf
-    dest: /etc/sysctl.d/ansible.conf
-  become: true
-  notify: Reload sysctls

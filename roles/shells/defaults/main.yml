@@ -1,17 +1,20 @@
 ---
 shell_aliases:
-  cp: 'cp --reflink=auto'
-  deduplicate: "duperemove -r -d -h -b 4096 --io-threads={{ ansible_processor_vcpus * 2 }} --cpu-threads={{ ansible_processor_vcpus }} --dedupe-options=same,fiemap --lookup-extents=yes --hash=xxhash"
-  diff: colordiff
-  docker-compose: 'podman-compose'
-  docker: 'podman'
-  expose-via-apache: 'podman run --rm -p 8080:80 --security-opt label=disable -v $PWD:/usr/local/apache2/htdocs/ httpd'
-  find: "find -O3"
-  gzip: "pigz"
-  ls: "ls --color=auto"
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
-  xz: "xz --threads={{ ansible_processor_vcpus }}"
-  zstd: "zstd -T{{ ansible_processor_vcpus }}"
+  xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
+  find: "find -O3"
 
-shell_path_extensions:
-  - "{{ ansible_user_dir }}/.cargo/bin"
+shell_interactive_aliases:
+  cat: bat
+  docker: podman
+  docker-compose: podman-compose
+  '..': "cd .."
+  lt: 'du -sh | sort -h -r'
+  histgrep: "history | grep"
+  rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+  noemptylines: "sed -e '/^$/d'"
+  squeezespaces0: "tr -s ' '"
+
+shell_interactive_vars:
+  MANPAGER: "sh -c 'col -bx | bat -l man -p'"
+  MANROFFOPT: "-c"

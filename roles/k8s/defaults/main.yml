@@ -1,7 +1,3 @@
 ---
-helm_version: v3.2.1
-jsonnet_version: v0.16.0
-k9s_version: v0.20.3
-
-minikube_rpm_url: "https://github.com/kubernetes/minikube/releases/download/v1.11.0/minikube-1.11.0-0.x86_64.rpm"
-minikube_kvm_url: "https://github.com/kubernetes/minikube/releases/download/v1.11.0/docker-machine-driver-kvm2-1.11.0-0.x86_64.rpm"
+minikube_version: v1.12.0
+helm_version: v3.2.4

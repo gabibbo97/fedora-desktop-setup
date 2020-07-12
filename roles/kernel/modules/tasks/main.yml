@@ -1,8 +1,0 @@
----
-- name: Template out module configurations
-  template:
-    src: module.conf
-    dest: "/etc/modprobe.d/99-ansible-{{ item['key'] }}.conf"
-  with_dict: "{{ module_settings }}"
-  become: true
-  notify: Regenerate initramfs

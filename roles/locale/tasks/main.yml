@@ -1,7 +1,0 @@
----
-- name: Install LibreOffice language packs
-  dnf:
-    name:
-      - libreoffice-langpack-en
-      - libreoffice-langpack-it
-  become: true

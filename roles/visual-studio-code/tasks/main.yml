@@ -1,0 +1,27 @@
+---
+- name: Add Microsoft GPG key
+  rpm_key:
+    key: https://packages.microsoft.com/keys/microsoft.asc
+- name: Copy Visual Studio Code repo file
+  copy:
+    src: vscode.repo
+    dest: /etc/yum.repos.d/vscode.repo
+    force: true
+# Extensions
+- name: List Visual Studio Code extensions
+  command: code --list-extensions
+  changed_when: false
+  register: vscode_installed_exts
+- name: Install Visual Studio Code extensions
+  command: "code --install-extension {{ item }}"
+  loop: "{{ vscode_extensions | difference(vscode_installed_exts['stdout_lines']) }}"
+# Settings
+- name: Create Visual Studio Code settings directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/Code/User"
+    state: directory
+- name: Configure Visual Studio Code
+  copy:
+    content: "{{ vscode_settings | to_nice_json }}"
+    dest: "{{ ansible_user_dir }}/.config/Code/User/settings.json"
+    force: true

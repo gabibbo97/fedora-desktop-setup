@@ -1,0 +1,11 @@
+---
+- name: Install CLI utils
+  dnf:
+    name:
+      - bat
+  become: true
+
+- name: Template .bashrc
+  template:
+    src: bashrc.sh
+    dest: "{{ ansible_user_dir }}/.bashrc"

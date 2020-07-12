@@ -1,0 +1,12 @@
+---
+- name: Install fonts
+  dnf:
+    name:
+      - fira-code-fonts
+      - google-roboto-fonts
+      - impallari-raleway-fonts
+      - jetbrains-mono-fonts
+      - mozilla-fira-mono-fonts
+      - mozilla-fira-sans-fonts
+      - redhat-text-fonts
+  become: true

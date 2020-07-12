@@ -1,0 +1,11 @@
+---
+- name: Install Kubernetes repo
+  copy:
+    src: kubernetes.repo
+    dest: /etc/yum.repos.d
+    force: true
+  become: true
+- name: Install kubectl
+  dnf:
+    name: kubectl
+  become: true

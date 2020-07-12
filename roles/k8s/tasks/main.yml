@@ -1,23 +1,4 @@
 ---
-- name: Add Kubernetes DNF repo
-  yum_repository:
-    name: kubernetes
-    description: Kubernetes DNF repo
-    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-    gpgcheck: true
-    gpgkey: 'https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg'
-  become: true
-- name: Install Kubectl
-  dnf:
-    name: kubectl
-  become: true
-
-# Tools
-- import_tasks: helm.yml
-  tags: [ 'helm' ]
-- import_tasks: jsonnet.yml
-  tags: [ 'jsonnet' ]
-- import_tasks: k9s.yml
-  tags: [ 'k9s' ]
 - import_tasks: minikube.yml
-  tags: [ 'minikube' ]
+- import_tasks: helm.yml
+- import_tasks: kubectl.yml
