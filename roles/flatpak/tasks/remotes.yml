@@ -2,7 +2,8 @@
 - name: Add flatpak remotes
   flatpak_remote:
     name: "{{ item['key'] }}"
-    flatpakrepo_url: "{{ item['key'] }}"
+    flatpakrepo_url: "{{ item['value'] }}"
   with_dict: "{{ flatpak_remotes }}"
   loop_control:
     label: "{{ item['key'] }}"
+  become: true
