@@ -3,6 +3,7 @@
   connection: local
   roles:
     - { name: containers, tags: [ "containers" ] }
+    - { name: dconf, tags: [ "dconf" ] }
     - { name: flatpak, tags: [ "flatpak" ] }
     - { name: fonts, tags: [ "fonts" ] }
     - { name: k8s, tags: [ "k8s" ] }

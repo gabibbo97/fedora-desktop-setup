@@ -1,0 +1,12 @@
+---
+- name: Create dconf database directory
+  file:
+    path: /etc/dconf/db/database.d
+    state: directory
+  become: true
+- name: Write dconf settings
+  assemble:
+    src: "{{ role_path }}/files"
+    dest: /etc/dconf/db/database.d/ansible.conf
+  notify: Update dconf database
+  become: true
