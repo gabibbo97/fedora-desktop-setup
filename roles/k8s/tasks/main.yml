@@ -1,4 +1,5 @@
 ---
+- import_tasks: fluxctl.yml
 - import_tasks: minikube.yml
 - import_tasks: helm.yml
 - import_tasks: kubectl.yml
