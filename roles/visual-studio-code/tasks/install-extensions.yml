@@ -1,0 +1,11 @@
+---
+# Install Visual Studio Code if needed
+- import_tasks: install.yml
+# Install extensions
+- name: List Visual Studio Code extensions
+  command: code --list-extensions
+  changed_when: false
+  register: vscode_installed_exts
+- name: Install Visual Studio Code extensions
+  command: "code --install-extension {{ item }}"
+  loop: "{{ vscode_extensions | difference(vscode_installed_exts['stdout_lines']) }}"

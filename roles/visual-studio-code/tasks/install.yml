@@ -1,0 +1,15 @@
+---
+- name: Add Microsoft GPG key
+  rpm_key:
+    key: https://packages.microsoft.com/keys/microsoft.asc
+  become: true
+- name: Copy Visual Studio Code repo file
+  copy:
+    src: "{{ playbook_dir }}/roles/visual-studio-code/files/vscode.repo"
+    dest: /etc/yum.repos.d/vscode.repo
+    force: true
+  become: true
+- name: Install Visual Studio Code
+  dnf:
+    name: code
+  become: true
