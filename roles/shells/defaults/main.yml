@@ -4,6 +4,9 @@ shell_aliases:
   xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
   find: "find -O3"
 
+shell_extra_paths:
+  - "{{ ansible_user_dir }}/.cargo/bin"
+
 shell_interactive_aliases:
   cat: bat
   docker: podman

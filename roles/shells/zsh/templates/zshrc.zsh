@@ -18,6 +18,7 @@ setopt HIST_REDUCE_BLANKS
 prompt fade red
 
 {% include 'aliases.sh' %}
+{% include 'path.sh' %}
 
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_USE_ASYNC='y'

@@ -1,3 +1,4 @@
+
 # Aliases
 {% for alias, alias_cmd in shell_aliases.items() %}
 alias {{ alias | quote }}="{{ alias_cmd }}"

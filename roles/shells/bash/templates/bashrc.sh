@@ -42,3 +42,4 @@ __prompt_command() {
 PROMPT_COMMAND=__prompt_command
 
 {% include 'aliases.sh' %}
+{% include 'path.sh' %}

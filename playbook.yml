@@ -2,6 +2,7 @@
 - hosts: localhost
   connection: local
   roles:
+    - { name: coding, tags: [ "coding" ] }
     - { name: containers, tags: [ "containers" ] }
     - { name: dconf, tags: [ "dconf" ] }
     - { name: flatpak, tags: [ "flatpak" ] }
