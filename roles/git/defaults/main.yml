@@ -1,0 +1,13 @@
+---
+git_settings:
+  core.compression: 9
+  core.looseCompression: 1
+  fetch.parallel: "{{ ansible_processor_vcpus }}"
+  gc.aggressiveDepth: 500 # Default is 50
+  gc.aggressiveWindow: 2500 # Default is 250
+  grep.threads: "{{ ansible_processor_vcpus }}"
+  http.maxRequests: "{{ ansible_processor_vcpus }}"
+  index.threads: "{{ ansible_processor_vcpus }}"
+  pack.compression: 9
+  pack.threads: "{{ ansible_processor_vcpus }}"
+  submodule.fetchJobs: "{{ ansible_processor_vcpus }}"
