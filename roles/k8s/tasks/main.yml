@@ -1,5 +1,5 @@
 ---
-- import_tasks: fluxctl.yml
-- import_tasks: minikube.yml
-- import_tasks: helm.yml
-- import_tasks: kubectl.yml
+- { import_tasks: fluxctl.yml, tags: [ 'fluxctl' ] }
+- { import_tasks: minikube.yml, tags: [ 'minikube' ] }
+- { import_tasks: helm.yml, tags: [ 'helm' ] }
+- { import_tasks: kubectl.yml, tags: [ 'kubectl' ] }
