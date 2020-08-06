@@ -1,5 +1,6 @@
 ---
 shell_aliases:
+  cp: 'cp --sparse=always --reflink=always'
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
   xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
   find: "find -O3"
@@ -16,7 +17,7 @@ shell_interactive_aliases:
   histgrep: "history | grep"
   rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
   noemptylines: "sed -e '/^$/d'"
-  squeezespaces0: "tr -s ' '"
+  squeezespaces: "tr -s ' '"
 
 shell_interactive_vars:
   MANPAGER: "sh -c 'col -bx | bat -l man -p'"
