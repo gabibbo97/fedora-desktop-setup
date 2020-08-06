@@ -17,6 +17,8 @@ setopt HIST_REDUCE_BLANKS
 
 prompt fade red
 
+command_not_found_handler() { /usr/libexec/pk-command-not-found "$@"; }
+
 {% include 'aliases.sh' %}
 {% include 'path.sh' %}
 
