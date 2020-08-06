@@ -1,6 +1,6 @@
 ---
-fluxctl_checksum: sha512:f02081b049f73fb7a77452468a95f63b20c810fcdab38d9bdd763dbb23d8f600cabc20d902fd79b6c1c2c99ff9fe0d4d5e9ea934cc9b37981b20b45146e28e60
-fluxctl_version: 1.20.0
+fluxctl_checksum: sha512:f88244b7625ffda76a24e9c5f66593a6f2a271308149a616ada24ff8c9fb7bec91444248cdeb21b8580022eb716984833c71cf1a062687fb0be83a9d6baba66c
+fluxctl_version: 1.20.1
 
 minikube_version: v1.12.2
 helm_version: v3.2.4
