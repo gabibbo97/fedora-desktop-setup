@@ -1,12 +1,12 @@
----
 vscode_extensions:
-  - vscode-icons-team.vscode-icons
-
+- CoenraadS.bracket-pair-colorizer-2
+- eamodio.gitlens
+- vscode-icons-team.vscode-icons
 vscode_settings:
   editor.cursorBlinking: smooth
   editor.cursorSmoothCaretAnimation: true
   editor.find.autoFindInSelection: multiline
-  editor.fontFamily: "'JetBrains Mono Regular','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+  editor.fontFamily: '''JetBrains Mono Regular'',''Droid Sans Mono'', ''monospace'', monospace, ''Droid Sans Fallback'''
   editor.formatOnPaste: true
   editor.renderControlCharacters: true
   editor.renderWhitespace: boundary
@@ -18,9 +18,13 @@ vscode_settings:
   files.insertFinalNewline: true
   files.trimFinalNewlines: true
   files.trimTrailingWhitespace: true
+  git.autoStash: true
   git.autofetch: true
   git.confirmSync: false
   git.enableSmartCommit: true
+  python.analysis.memory.keepLibraryAst: true
+  python.analysis.memory.keepLibraryLocalVariables: true
+  rust.clippy_preference: 'on'
   vsicons.dontShowNewVersionMessage: true
   window.title: ${dirty}${activeEditorShort}${separator}${rootName}
   window.titleBarStyle: custom
