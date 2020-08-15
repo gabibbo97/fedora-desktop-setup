@@ -5,3 +5,17 @@
       - "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/docker-machine-driver-kvm2-{{ minikube_version[1:] }}-0.x86_64.rpm"
       - "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/minikube-{{ minikube_version[1:] }}-0.x86_64.rpm"
   become: true
+
+- name: List minikube settings
+  command: minikube config view
+  register: minikube_current_settings
+  changed_when: false
+
+- name: Setup minikube settings
+  command: "minikube config set {{ item['key'] }} {{ item['value'] }}"
+  with_dict: "{{ minikube_settings }}"
+  when: "search_text not in minikube_current_settings['stdout_lines']"
+  loop_control:
+    label: "{{ item['key'] }}={{ item['value'] }}"
+  vars:
+    search_text: "- {{ item['key'] }}: {{ item['value'] }}"

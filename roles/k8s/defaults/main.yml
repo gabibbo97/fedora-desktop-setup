@@ -3,4 +3,9 @@ fluxctl_checksum: sha512:f88244b7625ffda76a24e9c5f66593a6f2a271308149a616ada24ff
 fluxctl_version: 1.20.1
 
 minikube_version: v1.12.3
+minikube_settings:
+  vm-driver: kvm2
+  cpus: "{{ [ 2, ((ansible_processor_vcpus / 2) | int) ] | max }}"
+  disk-size: 50G
+  memory: "{{ [ 4000, ((ansible_memtotal_mb / 2) | int) ] | max }}"
 helm_version: v3.2.4
