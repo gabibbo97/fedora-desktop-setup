@@ -9,15 +9,18 @@ shell_extra_paths:
   - "{{ ansible_user_dir }}/.cargo/bin"
 
 shell_interactive_aliases:
-  cat: bat
-  docker: podman
-  docker-compose: podman-compose
   '..': "cd .."
-  lt: 'du -sh | sort -h -r'
+  cat: bat
+  docker-compose: podman-compose
+  docker: podman
+  grep: 'grep --color=auto'
   histgrep: "history | grep"
-  rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+  idle: 'ionice -c 3 nice -19'
+  lt: 'du -sh | sort -h -r'
   noemptylines: "sed -e '/^$/d'"
+  rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
   squeezespaces: "tr -s ' '"
+  time: 'command time -v'
 
 shell_interactive_vars:
   MANPAGER: "sh -c 'col -bx | bat -l man -p'"
