@@ -10,6 +10,7 @@ flatpaks:
       - com.jetbrains.IntelliJ-IDEA-Community
       - com.microsoft.Teams
       - com.obsproject.Studio
+      - com.spotify.Client
       - com.valvesoftware.Steam
       - org.eclipse.Java
       - org.keepassxc.KeePassXC
