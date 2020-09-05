@@ -4,6 +4,15 @@ shell_aliases:
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
   xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
   find: "find -O3"
+  vault: >-
+    podman run --rm -i
+    --env 'VAULT_*'
+    --network=host
+    --privileged=true
+    --security-opt label=disable
+    --volume "${PWD}:/workdir"
+    --workdir /workdir
+    vault:1.5.3
 
 shell_extra_paths:
   - "{{ ansible_user_dir }}/.cargo/bin"
