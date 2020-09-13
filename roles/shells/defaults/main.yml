@@ -6,6 +6,8 @@ shell_aliases:
   find: "find -O3"
 
 shell_containers:
+  # Minio
+  mc: { image: minio/mc }
   # MongoDB tooling
   mongo: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongo' ]  }
   mongodump: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongodump' ]  }
