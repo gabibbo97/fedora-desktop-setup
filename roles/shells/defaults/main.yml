@@ -1,6 +1,6 @@
 ---
 shell_aliases:
-  cp: 'cp --sparse=always --reflink=always'
+  cp: 'cp --sparse=auto --reflink=always'
   sort: "sort --parallel={{ ansible_processor_vcpus }}"
   xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
   find: "find -O3"
