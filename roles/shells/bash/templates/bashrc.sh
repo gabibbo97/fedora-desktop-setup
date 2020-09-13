@@ -45,4 +45,5 @@ PROMPT_COMMAND=__prompt_command
 command_not_found_handle() { /usr/libexec/pk-command-not-found "$@"; }
 
 {% include 'aliases.sh' %}
+{% include 'functions.sh' %}
 {% include 'path.sh' %}

@@ -20,9 +20,10 @@ prompt fade red
 command_not_found_handler() { /usr/libexec/pk-command-not-found "$@"; }
 
 {% include 'aliases.sh' %}
+{% include 'functions.sh' %}
 {% include 'path.sh' %}
 
-ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC='y'
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
