@@ -1,6 +1,20 @@
 ---
+- name: Install libvirt clients
+  dnf:
+    name: libvirt-client
+  become: true
+
+- name: Add user to libvirt group
+  user:
+    name: "{{ ansible_user }}"
+    append: true
+    groups: libvirt
+  become: true
+
 - name: "Install Minikube {{ minikube_version }}"
   dnf:
+    # Ehehe, curl | sh move aside
+    disable_gpg_check: true
     name:
       - "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/docker-machine-driver-kvm2-{{ minikube_version[1:] }}-0.x86_64.rpm"
       - "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/minikube-{{ minikube_version[1:] }}-0.x86_64.rpm"
