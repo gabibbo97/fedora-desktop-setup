@@ -11,3 +11,4 @@ git_settings:
   pack.compression: 9
   pack.threads: "{{ ansible_processor_vcpus }}"
   submodule.fetchJobs: "{{ ansible_processor_vcpus }}"
+  pull.rebase: 'true'
