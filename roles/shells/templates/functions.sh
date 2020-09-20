@@ -14,5 +14,5 @@ __container_command_wrap() {
     "$@"
 }
 {% for cmd, opts in shell_containers.items() %}
-{{ cmd }}() { __container_command_wrap {{ opts['extra_args'] | default([]) | join(' ') }} {{ opts['image'] }} "$@" }
+{{ cmd }}() { __container_command_wrap {{ opts['extra_args'] | default([]) | join(' ') }} {{ opts['image'] }} "$@"; }
 {% endfor %}
