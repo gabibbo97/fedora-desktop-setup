@@ -1,12 +1,30 @@
 vscode_extensions:
 - CoenraadS.bracket-pair-colorizer-2
 - eamodio.gitlens
+- felixfbecker.php-intellisense
+- firefox-devtools.vscode-firefox-debug
+- golang.Go
+- HashiCorp.terraform
+- James-Yu.latex-workshop
+- MicroProfile-Community.vscode-microprofile-pack
+- ms-kubernetes-tools.vscode-kubernetes-tools
+- ms-python.python
+- ms-vscode.cpptools
+- msjsdiag.debugger-for-chrome
+- Pivotal.vscode-boot-dev-pack
+- redhat.vscode-quarkus
+- redhat.vscode-xml
+- redhat.vscode-yaml
+- rust-lang.rust
+- SonarSource.sonarlint-vscode
+- vscjava.vscode-java-pack
 - vscode-icons-team.vscode-icons
+- yzhang.markdown-all-in-one
+- vscoss.vscode-ansible
 vscode_settings:
   editor.cursorBlinking: smooth
   editor.cursorSmoothCaretAnimation: true
   editor.find.autoFindInSelection: multiline
-  editor.fontFamily: '''JetBrains Mono Regular'',''Droid Sans Mono'', ''monospace'', monospace, ''Droid Sans Fallback'''
   editor.formatOnPaste: true
   editor.renderControlCharacters: true
   editor.renderWhitespace: boundary
@@ -22,9 +40,19 @@ vscode_settings:
   git.autofetch: true
   git.confirmSync: false
   git.enableSmartCommit: true
+  go.formatTool: gofmt
+  go.useCodeSnippetsOnFunctionSuggest: true
+  go.useLanguageServer: true
+  java.codeGeneration.toString.codeStyle: STRING_BUILDER_CHAINED
+  java.codeGeneration.useBlocks: true
+  java.referencesCodeLens.enabled: true
+  java.saveActions.organizeImports: true
+  java.signatureHelp.enabled: true
   python.analysis.memory.keepLibraryAst: true
   python.analysis.memory.keepLibraryLocalVariables: true
+  rust-client.engine: rust-analyzer
   rust.clippy_preference: 'on'
+  sonarlint.disableTelemetry: true
   vsicons.dontShowNewVersionMessage: true
   window.title: ${dirty}${activeEditorShort}${separator}${rootName}
   window.titleBarStyle: custom
@@ -32,3 +60,6 @@ vscode_settings:
   workbench.iconTheme: vscode-icons
   workbench.list.smoothScrolling: true
   workbench.tree.renderIndentGuides: always
+  xml.codeLens.enabled: true
+  yaml.format.singleQuote: true
+  yaml.validate: false

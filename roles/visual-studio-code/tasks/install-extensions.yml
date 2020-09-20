@@ -6,6 +6,11 @@
   command: code --list-extensions
   changed_when: false
   register: vscode_installed_exts
+
 - name: Install Visual Studio Code extensions
   command: "code --install-extension {{ item }}"
   loop: "{{ vscode_extensions | difference(vscode_installed_exts['stdout_lines']) }}"
+
+- name: Remove extraneous Visual Studio Code extensions
+  command: "code --disable-extension {{ item }}"
+  loop: "{{ vscode_installed_exts['stdout_lines'] | difference(vscode_extensions) }}"
