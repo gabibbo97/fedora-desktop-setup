@@ -9,14 +9,14 @@ shell_containers:
   # Minio
   mc: { image: minio/mc }
   # MongoDB tooling
-  mongo: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongo' ]  }
-  mongodump: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongodump' ]  }
-  mongoexport: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongoexport' ]  }
-  mongofiles: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongofiles' ]  }
-  mongoimport: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongoimport' ]  }
-  mongorestore: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongorestore' ]  }
-  mongostat: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongostat' ]  }
-  mongotop: { image: mongo:4.4.0, extra_args: [ '--entrypoint', 'mongotop' ]  }
+  mongo: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongo' ]  }
+  mongodump: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongodump' ]  }
+  mongoexport: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongoexport' ]  }
+  mongofiles: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongofiles' ]  }
+  mongoimport: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongoimport' ]  }
+  mongorestore: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongorestore' ]  }
+  mongostat: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongostat' ]  }
+  mongotop: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongotop' ]  }
   # Hashicorp Vault
   vault: { image: vault:1.5.3, extra_args: [ "--env 'VAULT_*'" ] }
 
