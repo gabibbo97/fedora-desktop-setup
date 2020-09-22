@@ -5,5 +5,3 @@
       - podman
       - podman-compose
   become: true
-- import_tasks: "{{ playbook_dir }}/roles/visual-studio-code/tasks/install-extensions.yml"
-  vars: { vscode_extensions: [ 'ms-azuretools.vscode-docker' ] }

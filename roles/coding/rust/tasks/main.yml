@@ -5,11 +5,8 @@
       - cargo
       - rust
   become: true
-# VSCode
 - name: Install Rust linters / formatters
   dnf:
     name:
       - rustfmt
   become: true
-- import_tasks: "{{ playbook_dir }}/roles/visual-studio-code/tasks/install-extensions.yml"
-  vars: { vscode_extensions: [ 'rust-lang.rust' ] }
