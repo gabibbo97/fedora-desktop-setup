@@ -12,15 +12,18 @@ vscode_extensions:
 - ms-vscode.cpptools
 - msjsdiag.debugger-for-chrome
 - Pivotal.vscode-boot-dev-pack
+- redhat.java
+- redhat.vscode-microprofile
 - redhat.vscode-quarkus
 - redhat.vscode-xml
 - redhat.vscode-yaml
 - rust-lang.rust
 - SonarSource.sonarlint-vscode
+- vscjava.vscode-java-debug
 - vscjava.vscode-java-pack
 - vscode-icons-team.vscode-icons
-- yzhang.markdown-all-in-one
 - vscoss.vscode-ansible
+- yzhang.markdown-all-in-one
 vscode_settings:
   editor.cursorBlinking: smooth
   editor.cursorSmoothCaretAnimation: true

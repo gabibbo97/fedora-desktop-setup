@@ -6,11 +6,18 @@
   command: code --list-extensions
   changed_when: false
   register: vscode_installed_exts
+- name: Parse Visual Studio Code installed extensions
+  set_fact:
+    vscode_installed_exts: "{{ vscode_installed_exts['stdout_lines'] }}"
+
+- name: Calculate extensions to install / uninstall
+  set_fact:
+    vscode_exts_to_install: "{{ (vscode_extensions | map('lower') | list) | difference(vscode_installed_exts | map('lower') | list) }}"
+    vscode_exts_to_remove:  "{{ (vscode_installed_exts | map('lower') | list) | difference(vscode_extensions | map('lower') | list) }}"
 
 - name: Install Visual Studio Code extensions
   command: "code --force --install-extension {{ item }}"
-  loop: "{{ vscode_extensions | difference(vscode_installed_exts['stdout_lines']) }}"
-
+  loop: "{{ vscode_exts_to_install }}"
 - name: Remove extraneous Visual Studio Code extensions
   command: "code --uninstall-extension {{ item }}"
-  loop: "{{ vscode_installed_exts['stdout_lines'] | difference(vscode_extensions) }}"
+  loop: "{{ vscode_exts_to_remove }}"
