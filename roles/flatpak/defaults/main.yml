@@ -5,16 +5,15 @@ flatpak_remotes:
 flatpaks:
   - repo: flathub
     packages:
-      - com.github.marktext.marktext
       - com.google.AndroidStudio
       - com.jetbrains.IntelliJ-IDEA-Community
       - com.microsoft.Teams
       - com.obsproject.Studio
       - com.spotify.Client
       - com.valvesoftware.Steam
+      - org.blender.Blender
       - org.eclipse.Java
-      - org.keepassxc.KeePassXC
-      - org.octave.Octave
-      - org.olivevideoeditor.Olive
+      - org.gimp.GIMP
+      - org.gnome.PasswordSafe
       - org.telegram.desktop
       - org.videolan.VLC
