@@ -2,3 +2,7 @@
 - name: Update dconf database
   command: dconf update
   become: true
+- name: Import dconf keys
+  command: dconf load /
+  args:
+    stdin: "{{ lookup('file', '/etc/dconf/db/database.d/ansible') }}"

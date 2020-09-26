@@ -6,7 +6,9 @@
   become: true
 - name: Write dconf settings
   assemble:
-    src: "{{ role_path }}/files"
-    dest: /etc/dconf/db/database.d/ansible.conf
-  notify: Update dconf database
+    src: "{{ role_path }}/files" # Generate with `dconf dump /`
+    dest: /etc/dconf/db/database.d/ansible
+  notify:
+    - Update dconf database
+    - Import dconf keys
   become: true
