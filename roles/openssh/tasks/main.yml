@@ -1,0 +1,9 @@
+---
+- name: Create ~/.ssh
+  file:
+    path: "{{ ansible_user_dir }}/.ssh"
+    state: directory
+- name: Configure ssh client
+  template:
+    src: ssh_config
+    dest: "{{ ansible_user_dir }}/.ssh/config"

@@ -1,0 +1,5 @@
+# {{ ansible_managed }}
+# man 5 ssh_config
+{% for k,v in openssh_settings.items() %}
+{{ k }} {{ v }}
+{% endfor %}
