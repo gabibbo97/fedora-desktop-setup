@@ -25,7 +25,6 @@ shell_extra_paths:
 
 shell_interactive_aliases:
   '..': "cd .."
-  cat: bat
   docker-compose: podman-compose
   docker: podman
   grep: 'grep --color=auto'
