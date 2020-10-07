@@ -18,7 +18,7 @@ shell_containers:
   mongostat: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongostat' ]  }
   mongotop: { image: mongo:4.4.1, extra_args: [ '--entrypoint', 'mongotop' ]  }
   # Hashicorp Vault
-  vault: { image: vault:1.5.3, extra_args: [ "--env 'VAULT_*'" ] }
+  vault: { image: vault:1.5.4, extra_args: [ "--env 'VAULT_*'" ] }
 
 shell_extra_paths:
   - "{{ ansible_user_dir }}/.cargo/bin"
