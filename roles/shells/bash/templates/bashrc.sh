@@ -1,7 +1,5 @@
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
+source /etc/bashrc
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
