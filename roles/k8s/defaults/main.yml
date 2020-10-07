@@ -8,4 +8,4 @@ minikube_settings:
   cpus: "{{ [ 2, ((ansible_processor_vcpus / 2) | int) ] | max }}"
   disk-size: 50G
   memory: "{{ [ 4000, ((ansible_memtotal_mb / 2) | int) ] | max }}"
-helm_version: v3.3.3
+helm_version: v3.3.4
