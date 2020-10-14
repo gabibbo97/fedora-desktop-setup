@@ -32,6 +32,7 @@ shell_interactive_aliases:
   histgrep: "history | grep"
   idle: 'ionice -c 3 nice -19'
   lt: 'du -sh | sort -h -r'
+  no-aslr: 'setarch $(uname -m) --addr-no-randomize'
   noemptylines: "sed -e '/^$/d'"
   rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
   squeezespaces: "tr -s ' '"
