@@ -2,7 +2,7 @@
 fluxctl_checksum: sha512:d63482bc330f13a3c29a2015d41c500a767345292d70d392edab24c1c7cf63545bc9a4aee81ee4b2523b68b8b5fa33676e385be798ffc8737ad26c73c5708ce3
 fluxctl_version: 1.21.0
 
-minikube_version: v1.13.1
+minikube_version: v1.14.0
 minikube_settings:
   vm-driver: kvm2
   cpus: "{{ [ 2, ((ansible_processor_vcpus / 2) | int) ] | max }}"
