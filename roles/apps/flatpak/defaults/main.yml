@@ -14,6 +14,8 @@ flatpaks:
       - org.gimp.GIMP
       - org.telegram.desktop
       - org.videolan.VLC
+      - org.blender.Blender
+      - org.godotengine.Godot
       # Games
       - uk.co.powdertoy.tpt
       - org.openttd.OpenTTD

@@ -1,2 +1,5 @@
-vscode_extensions: []
-vscode_settings: {}
+vscode_extensions:
+
+- redhat.vscode-yaml
+- vscode-icons-team.vscode-icons
+- vscodevim.vim

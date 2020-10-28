@@ -3,13 +3,3 @@
 - import_tasks: install.yml
 # Extensions
 - import_tasks: install-extensions.yml
-# Settings
-- name: Create Visual Studio Code settings directory
-  file:
-    path: "{{ ansible_user_dir }}/.config/Code/User"
-    state: directory
-- name: Configure Visual Studio Code
-  copy:
-    content: "{{ vscode_settings | to_nice_json }}"
-    dest: "{{ ansible_user_dir }}/.config/Code/User/settings.json"
-    force: true

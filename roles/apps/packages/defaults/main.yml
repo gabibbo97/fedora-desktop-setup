@@ -1,5 +1,7 @@
 ---
 package_list:
+  # RPMFusion
+  - ffmpeg
   # Programming
   - nodejs
   # CLI
@@ -44,3 +46,4 @@ package_files:
   vagrant/Vagrantfile: "{{ ansible_user_dir }}/.vagrant.d/Vagrantfile"
   starship/starship.toml: "{{ xdg_config }}/starship.toml"
   neovim/init.vim: "{{ xdg_config }}/nvim/init.vim"
+  code/settings.json: "{{ xdg_config }}/Code/User/settings.json"

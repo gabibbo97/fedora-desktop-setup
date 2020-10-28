@@ -3,22 +3,14 @@
   set_fact:
     os_release: "{{ lookup('file','/etc/os-release') }}"
 
-- name: Set rpmfusion repo name
-  set_fact:
-    rpmfusion_kind: |-
-      {%- if 'rawhide' in os_release -%}
-      rawhide
-      {%- else -%}
-      {{- lookup('pipe','rpm -E %fedora') -}}
-      {%- endif -%}
-
 - name: Install RPMFusion Free
   dnf:
-    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ rpmfusion_kind }}.noarch.rpm"
+    name: "http://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ lookup('pipe','rpm -E %fedora') }}.noarch.rpm"
+    disable_gpg_check: true
   become: true
 
 - name: Install RPMFusion NonFree
   dnf:
-    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ rpmfusion_kind }}.noarch.rpm"
+    name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ lookup('pipe','rpm -E %fedora') }}.noarch.rpm"
+    disable_gpg_check: true
   become: true
-
