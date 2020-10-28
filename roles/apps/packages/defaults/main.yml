@@ -37,6 +37,8 @@ package_list:
   - zstd
   - python-neovim
   # GUI
+  - chromium
+  - firefox
   - gnome-latex
   - gnome-firmware
 
