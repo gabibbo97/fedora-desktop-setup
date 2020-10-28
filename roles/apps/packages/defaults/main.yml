@@ -41,6 +41,8 @@ package_list:
   - firefox
   - gnome-latex
   - gnome-firmware
+  - gnome-tweaks
+  - gnome-shell-extension-pop-shell
 
 xdg_config: "{{ ansible_user_dir }}/.config"
 
