@@ -42,5 +42,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set updatetime=100
 
 " Settings
+set relativenumber
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set nonumber relativenumber
 set tabstop=2
 set shiftwidth=2
