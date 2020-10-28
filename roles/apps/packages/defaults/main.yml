@@ -1,5 +1,7 @@
 ---
 package_list:
+  # Programming
+  - nodejs
   # CLI
   - ansible
   - aria2
@@ -15,10 +17,10 @@ package_list:
   - jq
   - ncdu
   - neovim
-  - nnn
   - podman
   - podman-compose
   - pv
+  - ranger
   - rclone
   - ripgrep
   - rsync
@@ -31,6 +33,7 @@ package_list:
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - zstd
+  - python-neovim
   # GUI
   - gnome-latex
   - gnome-firmware
@@ -40,3 +43,4 @@ xdg_config: "{{ ansible_user_dir }}/.config"
 package_files:
   vagrant/Vagrantfile: "{{ ansible_user_dir }}/.vagrant.d/Vagrantfile"
   starship/starship.toml: "{{ xdg_config }}/starship.toml"
+  neovim/init.vim: "{{ xdg_config }}/nvim/init.vim"

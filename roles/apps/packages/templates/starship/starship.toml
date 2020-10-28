@@ -1,0 +1,5 @@
+add_newline = false
+
+[cmd_duration]
+show_milliseconds = true
+
