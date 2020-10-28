@@ -1,0 +1,19 @@
+---
+- name: Install packages
+  dnf:
+    name: '{{ package_list }}'
+  become: true
+
+- name: Create package configuration directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop: "{{ package_files.values() | map('dirname') | unique | list }}"
+
+- name: Copy package configuration files
+  template:
+    src: "{{ item['key'] }}"
+    dest: "{{ item['value'] }}"
+  with_dict: "{{ package_files }}"
+  loop_control:
+    label: "{{ item['value'] | basename }}"

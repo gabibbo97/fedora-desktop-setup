@@ -1,4 +1,0 @@
----
-dependencies:
-  - { role: coding/python, tags: [ 'python' ] }
-  - { role: coding/rust, tags: [ 'rust' ] }

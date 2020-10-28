@@ -1,0 +1,42 @@
+---
+package_list:
+  # CLI
+  - ansible
+  - aria2
+  - asciinema
+  - bat
+  - curl
+  - fzf
+  - git
+  - glances
+  - ht
+  - htop
+  - hyperfine
+  - jq
+  - ncdu
+  - neovim
+  - nnn
+  - podman
+  - podman-compose
+  - pv
+  - rclone
+  - ripgrep
+  - rsync
+  - sshfs
+  - starship
+  - tar
+  - tmux
+  - tokei
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - zstd
+  # GUI
+  - gnome-latex
+  - gnome-firmware
+
+xdg_config: "{{ ansible_user_dir }}/.config"
+
+package_files:
+  vagrant/Vagrantfile: "{{ ansible_user_dir }}/.vagrant.d/Vagrantfile"
+  starship/starship.toml: "{{ xdg_config }}/starship.toml"

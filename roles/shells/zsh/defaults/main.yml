@@ -1,0 +1,27 @@
+---
+shell_aliases:
+  cp: 'cp --sparse=auto --reflink=auto'
+  sort: "sort --parallel={{ ansible_processor_vcpus }}"
+  xargs: "xargs --max-procs={{ ansible_processor_vcpus }}"
+  find: "find -O3"
+  vi: nvim
+  vim: nvim
+
+shell_extra_paths:
+  - "{{ ansible_user_dir }}/.cargo/bin"
+  - "{{ ansible_user_dir }}/.local/bin"
+
+shell_interactive_aliases:
+  '..': "cd .."
+  docker-compose: podman-compose
+  docker: podman
+  grep: 'grep --color=auto'
+  no-aslr: 'setarch $(uname -m) --addr-no-randomize'
+  noemptylines: "sed -e '/^$/d'"
+  rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+shell_interactive_vars:
+  EDITOR: "nvim"
+  PAGER: "less"
+  MANPAGER: "sh -c 'col -bx | bat -l man -p'"
+  MANROFFOPT: "-c"

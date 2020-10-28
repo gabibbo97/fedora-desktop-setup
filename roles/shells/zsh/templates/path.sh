@@ -1,1 +1,0 @@
-roles/shells/templates/path.sh

@@ -1,7 +1,4 @@
 ---
 openssh_settings:
-  ControlMaster: 'yes'
-  ControlPath: "{{ lookup('env','XDG_RUNTIME_DIR') }}/ssh-%r-at-%h-port-%p.sock"
-  ControlPersist: '10s'
   ServerAliveCountMax: '5'
   ServerAliveInterval: '2'

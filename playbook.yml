@@ -2,17 +2,9 @@
 - hosts: localhost
   connection: local
   roles:
-    - { name: coding, tags: [ "coding" ] }
-    - { name: containers, tags: [ "containers" ] }
+    - { name: apps, tags: [ "apps" ] }
     - { name: dconf, tags: [ "dconf" ] }
-    - { name: flatpak, tags: [ "flatpak" ] }
-    - { name: fonts, tags: [ "fonts" ] }
     - { name: git, tags: [ "git" ] }
-    - { name: k8s, tags: [ "k8s" ] }
     - { name: openssh, tags: [ "openssh" ] }
-    - { name: rpmfusion, tags: [ "rpmfusion" ] }
-    - { name: shells, tags: [ "shells" ] }
-    - { name: sudo, tags: [ "sudo" ] }
-    - { name: vagrant, tags: [ "vagrant" ] }
-    - { name: visual-studio-code, tags: [ "visual-studio-code" ] }
-    - { name: tools, tags: [ "tools" ] }
+    - { name: shells/zsh, tags: [ "shells", "zsh" ] }
+    - { name: passwordless-sudo, tags: [ "sudo", "passwordless-sudo" ] }

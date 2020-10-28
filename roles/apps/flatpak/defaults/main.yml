@@ -1,0 +1,20 @@
+---
+flatpak_remotes:
+  flathub: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpaks:
+  - repo: flathub
+    packages:
+      # Apps
+      - com.jetbrains.IntelliJ-IDEA-Community
+      - com.microsoft.Teams
+      - com.obsproject.Studio
+      - com.spotify.Client
+      - org.eclipse.Java
+      - org.gimp.GIMP
+      - org.telegram.desktop
+      - org.videolan.VLC
+      # Games
+      - uk.co.powdertoy.tpt
+      - org.openttd.OpenTTD
+      - org.xonotic.Xonotic

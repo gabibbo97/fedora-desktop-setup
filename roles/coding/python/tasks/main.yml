@@ -1,8 +1,0 @@
----
-# VSCode
-- name: Install Python linters / formatters
-  dnf:
-    name:
-      - python3-autopep8
-      - python3-pylint
-  become: true
