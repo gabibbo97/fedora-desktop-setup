@@ -4,6 +4,7 @@ dependencies:
   - { role: apps/rpmfusion, tags: [ "rpmfusion" ] }
   # Apps
   - { role: apps/packages, tags: [ "packages" ] }
+  - { role: apps/flatpak, tags: [ "flatpak" ] }
   - { role: apps/visual-studio-code, tags: [ "visual-studio-code" ] }
   # External
   - { role: apps/k8s, tags: [ "k8s" ] }

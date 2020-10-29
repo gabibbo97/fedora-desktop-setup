@@ -6,16 +6,20 @@ flatpaks:
   - repo: flathub
     packages:
       # Apps
+      - com.google.AndroidStudio
       - com.jetbrains.IntelliJ-IDEA-Community
       - com.microsoft.Teams
       - com.obsproject.Studio
       - com.spotify.Client
+      - org.blender.Blender
       - org.eclipse.Java
       - org.gimp.GIMP
+      - org.godotengine.Godot
+      - org.keepassxc.KeePassXC
+      - org.octave.Octave
+      - org.olivevideoeditor.Olive
       - org.telegram.desktop
       - org.videolan.VLC
-      - org.blender.Blender
-      - org.godotengine.Godot
       # Games
       - uk.co.powdertoy.tpt
       - org.openttd.OpenTTD
