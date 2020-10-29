@@ -22,6 +22,5 @@ shell_interactive_aliases:
 
 shell_interactive_vars:
   EDITOR: "nvim"
-  PAGER: "less"
-  MANPAGER: "sh -c 'col -bx | bat -l man -p'"
-  MANROFFOPT: "-c"
+  PAGER: "nvim -R '+set norelativenumber number'"
+  MANPAGER: 'nvim +Man!'
