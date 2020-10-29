@@ -4,6 +4,9 @@ package_list:
   - ffmpeg
   # Programming
   - nodejs
+  - python
+  - python-pylint
+  - pipenv
   # CLI
   - ansible
   - aria2

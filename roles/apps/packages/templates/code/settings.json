@@ -51,5 +51,8 @@
     "statusBar.debuggingBackground": "#5f00af"
   },
   "vim.statusBarColorControl": true,
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+	"python.analysis.memory.keepLibraryAst": true,
+  "python.showStartPage": false,
+  "python.terminal.activateEnvInCurrentTerminal": true
 }
