@@ -1,0 +1,7 @@
+---
+- name: Reload sysctls
+  command: sysctl --system
+  become: true
+- name: Reload tmpfiles
+  command: systemd-tmpfiles --clean --create --remove
+  become: true

@@ -1,0 +1,14 @@
+---
+- name: Install kernel sysctls
+  template:
+    src: sysctls.conf
+    dest: /etc/sysctl.d/ansible.conf
+  notify: Reload sysctls
+  become: true
+
+- name: Install kernel tmpfiles
+  template:
+    src: tmpfiles.conf
+    dest: /etc/tmpfiles.d/ansible-ksm.conf
+  notify: Reload tmpfiles
+  become: true

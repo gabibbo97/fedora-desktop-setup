@@ -5,6 +5,7 @@
     - { name: apps, tags: [ "apps" ] }
     - { name: dconf, tags: [ "dconf" ] }
     - { name: git, tags: [ "git" ] }
+    - { name: kernel, tags: [ "kernel" ] }
     - { name: openssh, tags: [ "openssh" ] }
     - { name: shells/zsh, tags: [ "shells", "zsh" ] }
     - { name: passwordless-sudo, tags: [ "sudo", "passwordless-sudo" ] }
