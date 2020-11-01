@@ -13,7 +13,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'junegunn/fzf.vim', { 'on': [ 'FZF', 'Rg' ] }
   Plug 'mhinz/vim-signify'
 	Plug 'itchyny/lightline.vim'
-  Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+	Plug 'preservim/nerdtree', { 'on' : 'NERDTreeToggle' }
+	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on' : 'NERDTreeToggle' }
 call plug#end()
 
 " Auto-install
@@ -22,20 +23,19 @@ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 
 " coc
+let g:coc_global_extensions = [ 'coc-clangd' ]
 
 " FZF
 nnoremap <C-p> :FZF<CR>
 
 " Lightline
-let g:lightline = { 'colorscheme' : 'wombat' }
+let g:lightline = { 'colorscheme' : 'powerline' }
 "" Don't show mode
 set noshowmode
 
-" Nerdtree configuration
-let g:NERDTreeNaturalSort = 1
-"" Key bind
+" NERDTree
 map <C-b> :NERDTreeToggle<CR>
-"" Close if NERDTree is last open window
+"" Autoclose if last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Signify
@@ -45,5 +45,6 @@ set updatetime=100
 set relativenumber
 autocmd InsertEnter * :set number norelativenumber
 autocmd InsertLeave * :set nonumber relativenumber
+
 set tabstop=2
 set shiftwidth=2
