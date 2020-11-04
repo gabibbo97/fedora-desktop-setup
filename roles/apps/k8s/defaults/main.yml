@@ -1,5 +1,5 @@
 ---
-minikube_version: v1.14.1
+minikube_version: v1.14.2
 minikube_settings:
   vm-driver: kvm2
   cpus: "{{ [ 2, ((ansible_processor_vcpus / 2) | int) ] | max }}"
