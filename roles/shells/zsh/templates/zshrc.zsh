@@ -48,6 +48,10 @@ if [ -t 0 ]; then
 fi
 
 # Extra functions
+{% for funName, funBody in zsh_functions.items() %}
+## {{ funName }}
+{{ funBody }}
+{% endfor %}
 
 # Extra PATH
 export PATH="${PATH}:{{ shell_extra_paths | join(':') }}"

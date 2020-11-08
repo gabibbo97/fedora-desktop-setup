@@ -7,6 +7,13 @@
       - zsh-syntax-highlighting
   become: true
 
+- name: Parse ZSH functions
+  set_fact:
+    zsh_functions: "{{ zsh_functions | default({})  | combine({ (item | basename) : lookup('template', item) }) }}"
+  with_fileglob: "{{ role_path }}/templates/functions/*.zsh"
+  loop_control:
+    label: "{{ item | basename }}"
+
 - name: Template .zshrc
   template:
     src: zshrc.zsh
