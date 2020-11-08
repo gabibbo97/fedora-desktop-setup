@@ -19,8 +19,15 @@ shell_interactive_aliases:
   no-aslr: 'setarch $(uname -m) --addr-no-randomize'
   noemptylines: "sed -e '/^$/d'"
   rot13: "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+  # Colors
+  diff: 'diff --color=always'
+  dmesg: 'dmesg --color=always'
+  grep: 'grep --color=always'
+  ip: 'ip -color=always'
+  ls: 'ls --color=always'
 
 shell_interactive_vars:
   EDITOR: "nvim"
-  PAGER: "nvim -R '+set norelativenumber number'"
+  PAGER: "less"
   MANPAGER: 'nvim +Man!'
+  LESS: '-R'
